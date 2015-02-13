@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>User List</h2>
+<ul>
+    First 50 users:
+    {% for user in users %}
+    <li><a href="/users/{{user.id}}">User <strong>{{ user.id }}</strong></a>, age {{ user.age }}, has <strong>{{ user.ratings|length }} ratings</strong></li>
+    {% endfor %}
+</ul>
+{% endblock %}
